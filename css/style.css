@@ -497,6 +497,7 @@ header .wrapper {
   display: flex;
   align-items: center;
   flex-direction: row;
+  padding: 0 30px;
 }
 
 .header-logo {
@@ -504,7 +505,7 @@ header .wrapper {
 }
 
 .header-logo img {
-  height: 40px;
+  height: 30px;
 }
 
 .header-spacing {
@@ -514,12 +515,6 @@ header .wrapper {
 .menu-icon-wrapper {
   width: 30px;
   padding-top: 4px;
-}
-
-@media (min-width: 321px) {
-  .menu-icon-wrapper {
-    width: 40px;
-  }
 }
 
 .menu-icon-wrapper:hover {
