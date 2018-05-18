@@ -81,10 +81,6 @@ header {
         align-items:center;
         flex-direction:row;
     }
-
-    @include media(">phone") {
-        height:80px;
-    }
 }
 
 
@@ -94,10 +90,6 @@ header {
     img {
         
         height:25px;
-
-        @include media(">phone") {
-            height:40px;
-        }
     }
 }
 
@@ -154,10 +146,6 @@ header {
         display:flex;
     }
 
-    @include media(">phone") {
-        top:80px;
-        height:calc(100vh - 80px);
-    }
 
     ul {
         list-style-type:none;
@@ -183,10 +171,6 @@ header {
         }
     }
 
-
-    @include media(">phone") {
-        top:80px;
-    }
 }
 
 .nav-inner {
@@ -243,9 +227,6 @@ header {
 
     padding:40px 0;
 
-    @include media(">phone") {
-        margin-top:80px;
-    }
     p {
         color:$light;
         line-height:2rem;

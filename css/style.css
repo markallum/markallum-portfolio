@@ -499,24 +499,12 @@ header .wrapper {
   flex-direction: row;
 }
 
-@media (min-width: 321px) {
-  header {
-    height: 80px;
-  }
-}
-
 .header-logo {
   width: 70px;
 }
 
 .header-logo img {
   height: 25px;
-}
-
-@media (min-width: 321px) {
-  .header-logo img {
-    height: 40px;
-  }
 }
 
 .header-spacing {
@@ -570,13 +558,6 @@ header .wrapper {
   display: flex;
 }
 
-@media (min-width: 321px) {
-  .nav-wrapper {
-    top: 80px;
-    height: calc(100vh - 80px);
-  }
-}
-
 .nav-wrapper ul {
   list-style-type: none;
   margin: 0 auto;
@@ -595,12 +576,6 @@ header .wrapper {
 
 .nav-wrapper ul a:hover {
   color: #F5F5F5;
-}
-
-@media (min-width: 321px) {
-  .nav-wrapper {
-    top: 80px;
-  }
 }
 
 .nav-inner {
@@ -653,12 +628,6 @@ header .wrapper {
   margin-top: 50px;
   color: #FFDFD9;
   padding: 40px 0;
-}
-
-@media (min-width: 321px) {
-  .introduction {
-    margin-top: 80px;
-  }
 }
 
 .introduction p {
