@@ -70,7 +70,7 @@ header {
    
     
     width:100%;
-    height:50px;
+    height:80px;
 
     position:fixed;
     top:0;
@@ -89,7 +89,7 @@ header {
 
     img {
         
-        height:25px;
+        height:40px;
     }
 }
 
@@ -133,9 +133,9 @@ header {
 
 .nav-wrapper {
     position:fixed;
-    top:50px;
+    top:80px;
     left:0;
-    height:calc(100vh - 50px);
+    height:calc(100% - 80px);
     width:100%;
     background:rgba(0, 0, 0, 0.85);
     display:none;
@@ -222,7 +222,7 @@ header {
 .introduction {
     background:$red;
     
-    margin-top:50px;
+    margin-top:80px;
     color:#FFDFD9;
 
     padding:40px 0;
