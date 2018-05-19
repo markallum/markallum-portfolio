@@ -548,7 +548,7 @@ header .wrapper {
 .menu-icon-line {
   height: 5px;
   margin-bottom: 6px;
-  background: #e03f1f;
+  background: #ff6b6b;
 }
 
 .nav-wrapper {
@@ -635,6 +635,7 @@ header .wrapper {
 .intro {
   padding-top: 60px;
   background: #F2F2F2;
+  text-align: center;
 }
 
 .intro-main {
@@ -656,9 +657,9 @@ header .wrapper {
 }
 
 .project-list li:hover {
-  background: #F7EBEF;
+  background: #FCEBE6;
   cursor: pointer;
-  border-color: #e03f1f;
+  border-color: #ff6b6b;
 }
 
 .project-item {
@@ -687,7 +688,7 @@ header .wrapper {
 
 .project-title {
   display: flex;
-  color: #e03f1f;
+  color: #ff6b6b;
   order: 1;
   flex-grow: 1;
 }
@@ -747,6 +748,16 @@ h2 {
   color: #6A6A6B;
   font-weight: 400;
   font-size: 1.4rem;
+  text-align: center;
+}
+
+h2::after {
+  content: '';
+  height: 20px;
+  width: 100px;
+  background: url(../img/spacer.png);
+  display: block;
+  margin: 15px auto;
 }
 
 p {
@@ -754,17 +765,18 @@ p {
 }
 
 a {
-  color: #e03f1f;
+  color: #ff8e6b;
   text-decoration: none;
+  padding-bottom: 2px;
 }
 
 a:hover {
-  color: #e03f1f;
-  border-color: #e03f1f;
+  color: #ff6b6b;
+  border-color: #ff6b6b;
 }
 
 .block-link {
-  background: #e03f1f;
+  background: #ff6b6b;
   padding: 3px 5px;
   color: #F2F2F2;
 }

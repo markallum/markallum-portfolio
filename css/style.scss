@@ -9,10 +9,13 @@ $blue:#20293B;
 $light:#F2F2F2;
 $lighter:#F7F6F5;
 $red:#F0754D;
-$pink:#e03f1f;
+$pink:#ff6b6b;
 $grey:#6A6A6B;
 $light-grey:#A5A5A8;
 $white:#FCFAFA;
+
+$peach:#ff8e6b;
+$light-peach:#FCEBE6;
 
 $breakpoints: (phone: 420px, tablet: 768px, desktop: 1200px);
 
@@ -89,6 +92,7 @@ html {
         padding:40px 60px;
     }
 }
+
 
 
 // ============================== HEADER ============================== //
@@ -251,7 +255,7 @@ header {
 .intro {
     padding-top:60px;
     background:$light;
-
+    text-align:center;
 
 }
 
@@ -275,7 +279,7 @@ header {
         border-bottom:1px solid $light-grey;
 
         &:hover {
-            background:#F7EBEF;
+            background:$light-peach;
             cursor:pointer;
             border-color:$pink;
         }
@@ -367,6 +371,16 @@ h2 {
     color:$grey;
     font-weight:400;
     font-size:1.4rem;
+    text-align:center;
+}
+
+h2::after {
+    content:'';
+    height:20px;
+    width:100px;
+    background:url(../img/spacer.png);
+    display:block;
+    margin:15px auto;
 }
 
 p {
@@ -374,9 +388,10 @@ p {
 }
 
 a {
-    color:$pink;
+    color:$peach;
     text-decoration:none;
-    //border-bottom:2px dotted $pink;
+    padding-bottom:2px;
+    //border-bottom:2px dotted $peach;
 
     &:hover {
         color:$pink;
