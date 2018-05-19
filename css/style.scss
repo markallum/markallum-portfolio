@@ -6,12 +6,13 @@ $font-serif:'Source Serif Pro', 'Times New Roman', serif;
 
 $dark:#262730;
 $blue:#20293B;
-$light:#F7F6F5;
+$light:#F2F2F2;
 $lighter:#F7F6F5;
 $red:#F0754D;
-$pink:#E36899;
+$pink:#e03f1f;
 $grey:#6A6A6B;
 $light-grey:#A5A5A8;
+$white:#FCFAFA;
 
 $breakpoints: (phone: 420px, tablet: 768px, desktop: 1200px);
 
@@ -55,6 +56,16 @@ html {
 
 // ============================== LAYOUT ============================== //
 
+.page-wrapper {
+    display:flex;
+    min-height:100vh;
+    flex-direction:column;
+}
+
+.page-content {
+    flex:1;
+}
+
 .wrapper {
     width:100%;
     
@@ -83,11 +94,11 @@ html {
 // ============================== HEADER ============================== //
 
 header {
-    //background:rgba(32,41,59, 0.9);
+    background:$white;
    
     
     width:100%;
-    height:60px;
+    height:80px;
 
     position:fixed;
     top:0;
@@ -101,7 +112,7 @@ header {
         display:flex;
         align-items:center;
         flex-direction:row;
-        padding:0 20px;
+        padding:0 40px;
     }
 }
 
@@ -119,14 +130,8 @@ header {
 // ============================== NAVIGATION ============================== //
 
 .menu-icon-wrapper {
-    width:200px;
-    height:200px;
-    border-radius:100px;
-    padding:115px 0 0 50px;
-    background:rgba(32,41,59,0.1);
-    position:fixed;
-    top:-100px;
-    right:-100px;
+
+
     
     &:hover {
         cursor: pointer;
@@ -244,7 +249,7 @@ header {
 // ============================== INTRODUCTION ============================== //
 
 .intro {
-    padding-top:20px;
+    padding-top:60px;
     background:$light;
 
 
@@ -265,7 +270,6 @@ header {
 .project-list {
     list-style-type:none;
     padding-left:0;
-    background:$lighter;
     li {
         @extend .content;
         border-bottom:1px solid $light-grey;
@@ -340,6 +344,10 @@ header {
 }
 
 // ============================== CONTACT ============================== //
+
+footer {
+    background:$white;
+}
 
 .contact-links {
     list-style-type:none;

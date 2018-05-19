@@ -432,7 +432,7 @@ template {
 
 body {
   font-family: "Work Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  background: #F7F6F5;
+  background: #F2F2F2;
   color: #20293B;
   height: 100%;
   overflow-x: hidden;
@@ -468,6 +468,16 @@ html {
   text-align: center;
 }
 
+.page-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+}
+
 .wrapper {
   width: 100%;
 }
@@ -496,8 +506,9 @@ html {
 }
 
 header {
+  background: #FCFAFA;
   width: 100%;
-  height: 60px;
+  height: 80px;
   position: fixed;
   top: 0;
 }
@@ -511,7 +522,7 @@ header .wrapper {
   display: flex;
   align-items: center;
   flex-direction: row;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .header-logo {
@@ -520,17 +531,6 @@ header .wrapper {
 
 .header-spacing {
   flex-grow: 1;
-}
-
-.menu-icon-wrapper {
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
-  padding: 115px 0 0 50px;
-  background: rgba(32, 41, 59, 0.1);
-  position: fixed;
-  top: -100px;
-  right: -100px;
 }
 
 .menu-icon-wrapper:hover {
@@ -548,7 +548,7 @@ header .wrapper {
 .menu-icon-line {
   height: 5px;
   margin-bottom: 6px;
-  background: #E36899;
+  background: #e03f1f;
 }
 
 .nav-wrapper {
@@ -584,7 +584,7 @@ header .wrapper {
 }
 
 .nav-wrapper ul a:hover {
-  color: #F7F6F5;
+  color: #F2F2F2;
 }
 
 .nav-inner {
@@ -633,8 +633,8 @@ header .wrapper {
 }
 
 .intro {
-  padding-top: 20px;
-  background: #F7F6F5;
+  padding-top: 60px;
+  background: #F2F2F2;
 }
 
 .intro-main {
@@ -649,7 +649,6 @@ header .wrapper {
 .project-list {
   list-style-type: none;
   padding-left: 0;
-  background: #F7F6F5;
 }
 
 .project-list li {
@@ -659,7 +658,7 @@ header .wrapper {
 .project-list li:hover {
   background: #F7EBEF;
   cursor: pointer;
-  border-color: #E36899;
+  border-color: #e03f1f;
 }
 
 .project-item {
@@ -688,7 +687,7 @@ header .wrapper {
 
 .project-title {
   display: flex;
-  color: #E36899;
+  color: #e03f1f;
   order: 1;
   flex-grow: 1;
 }
@@ -728,6 +727,10 @@ header .wrapper {
   margin: 0 5px;
 }
 
+footer {
+  background: #FCFAFA;
+}
+
 .contact-links {
   list-style-type: none;
   padding-left: 0;
@@ -751,22 +754,22 @@ p {
 }
 
 a {
-  color: #E36899;
+  color: #e03f1f;
   text-decoration: none;
 }
 
 a:hover {
-  color: #E36899;
-  border-color: #E36899;
+  color: #e03f1f;
+  border-color: #e03f1f;
 }
 
 .block-link {
-  background: #E36899;
+  background: #e03f1f;
   padding: 3px 5px;
-  color: #F7F6F5;
+  color: #F2F2F2;
 }
 
 .block-link:hover {
   background: #FF4255;
-  color: #F7F6F5;
+  color: #F2F2F2;
 }
