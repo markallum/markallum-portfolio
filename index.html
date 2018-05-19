@@ -6,34 +6,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mark Allum</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro|Work+Sans:300,400" rel="stylesheet"> 
     <link rel="stylesheet" href="css/style.css">
     
 </head>
 
 <body>
 
-    <header>
 
-        <div class="wrapper">
-            <div class="header-logo">
-                <img src="img/logo-v1.png">
+        <div onclick="ToggleMenu()" class="menu-icon-wrapper HIDE-ME">
+            <div class="menu-icon">
+                    <div class="menu-icon-line">
+
+                        </div>
+                        <div class="menu-icon-line">
+        
+                        </div>
+                        <div class="menu-icon-line">
+        
+                        </div>
             </div>
-
-            <div class="header-spacing">
-
-            </div>
-
-            <div onclick="ToggleMenu()" class="menu-icon-wrapper">
-                <div class="menu-icon-line">
-
-                </div>
-                <div class="menu-icon-line">
-
-                </div>
-                <div class="menu-icon-line">
-
-                </div>
+                
             </div>
             <div id="nav" class="nav-wrapper">
                 <nav class="nav-inner">
@@ -62,6 +55,19 @@
                 
 
             </div>
+
+    <header class="HIDE-ME">
+
+        <div class="wrapper">
+            <div class="header-logo">
+                <img src="img/logo-v1.png" >
+            </div>
+
+            <div class="header-spacing">
+
+            </div>
+
+            
         </div>
 
 
@@ -69,42 +75,95 @@
 
     </header>
 
+        <section class="intro">
+                <div class="wrapper content">
 
-    <section class="introduction">
-        <div class="wrapper">
-            <p>
-                Hey! I'm Mark.
-                <span class="intro-mid">I design &amp; develop web applications.</span>
-                <span class="intro-light">I'm based in Nottingham and I'm available for hire.</span>
-            </p>
-        </div>
+                            <p class="intro-main">Hi, I'm Mark.<br />I design &amp; build for the web.</p>
+                            <p class="intro-sub">
+                                 Do you have a neat upcoming project? I'm <a class="block-link" href="#">available&nbsp;for&nbsp;hire</a>.
+                            </p>
+             
+        
+                    
+                    
+                </div>
+                
+        
+            </section>
+        
+        
+            <section class="projects">
+                <div class="wrapper">
 
-    </section>
+                    <h2 class="content">Projects</h2>
+                    </div>
+                    <div class="wrapper">
+                    <ul class="project-list">
+                        <li>
+                            <div class="project-item">
+                                <div class="project-title">
+                                    Infobase
+                                </div>
+                                <div class="project-source">
+                                    Stoneg
+                                </div>
+                                <div class="project-year">
+                                    2013 <span class="date-seperator"> // </span> 2018
+                                </div>
+                            </div>
+                        </li>
 
-    <section class="portfolio">
-        <div class="section-header">
-            <div class="section-break"></div>
-            <h2>Portfolio</h2>
-            <div class="section-break"></div>
-        </div>
+                        <li>
+                                <div class="project-item">
+                                    <div class="project-title">
+                                        Farm Management
+                                    </div>
+                                    <div class="project-source">
+                                        Stonegate
+                                    </div>
+                                    <div class="project-year">
+                                        2013 <span class="date-seperator"> // </span> 2018
+                                    </div>
+                                </div>
+                            </li>
 
-        <h3>Infobase</h3>
-        <p>Infobase is an intranet system designed to be Stonegates hub of internal affairs, handling everything from meeting
-            room bookings to production data reporting.</p>
-        <h3>Stonegate Farm Management</h3>
-        <p>A tool for the egg producers of Stonegate, giving them a portal where they can record, track and analyise their flocks
-            lifecycle and production data.</p>
-    </section>
 
-    <section class="about">
-        <div class="section-header">
-            <div class="section-break"></div>
-            <h2>About</h2>
-            <div class="section-break"></div>
-        </div>
+                            <li>
+                                    <div class="project-item">
+                                        <div class="project-title">
+                                            Another Project
+                                        </div>
+                                        <div class="project-source">
+                                            Personal
+                                        </div>
+                                        <div class="project-year">
+                                                2013
+                                        </div>
+                                    </div>
+                                </li>
+         
+                    </ul>
+                
+                </div>
+                
+            </section>
 
-        <p>I have over 7 years of experience working on a variety of projects. </p>
-    </section>
+      <section class="contact">
+          <div class="wrapper content">
+              <h2>Say hello</h2>
+
+              <ul class="contact-links">
+                  <li><a class="block-link" href="#">Email</a></li>
+                  <li><a class="block-link" href="#">Github</a></li>
+                  <li><a class="block-link" href="#">Blog</a></li>
+                  <li><a class="block-link" href="#">Instagram</a></li>
+              </ul>
+          </div>
+      </section>
+
+    
+
+  
 
 
     <script src="js/main.js"></script>

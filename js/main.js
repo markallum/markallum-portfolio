@@ -2,12 +2,15 @@
 let isMenuOpen = false;
 
 
-function ToggleMenu() {
+function toggleMenu() {
     let nav = document.getElementById('nav');
     if (isMenuOpen) {
-        nav.classList.remove('menu-open');
+        nav.classList.remove('active');
     } else {
-        nav.classList.add('menu-open');
+        nav.classList.add('active');
     }
     isMenuOpen = !isMenuOpen;
 }
+
+
+

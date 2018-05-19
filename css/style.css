@@ -431,25 +431,28 @@ template {
 }
 
 body {
-  font-family: "Open Sans", "Helvetica Neue", "Arial", sans-serif;
-  background: #F5F5F5;
-  color: #33292F;
+  font-family: "Work Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background: #F7F6F5;
+  color: #20293B;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 html {
-  font-size: 16px;
+  font-size: 18px;
   box-sizing: border-box;
+  height: 100%;
 }
 
 @media screen and (min-width: 320px) {
   html {
-    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(18px + 6 * ((100vw - 320px) / 680));
   }
 }
 
 @media screen and (min-width: 1000px) {
   html {
-    font-size: 22px;
+    font-size: 24px;
   }
 }
 
@@ -461,35 +464,46 @@ html {
   display: none;
 }
 
-.wrapper {
-  width: 100%;
-  padding: 0 15px;
+.center {
+  text-align: center;
 }
 
-@media (min-width: 321px) {
-  .wrapper {
-    padding: 0 30px;
-  }
+.wrapper {
+  width: 100%;
 }
 
 @media (min-width: 1201px) {
   .wrapper {
     width: 1160px;
     margin: 0 auto;
-    padding: 0 40px;
   }
 }
 
-section {
-  margin-bottom: 60px;
+.content, .project-list li {
+  padding: 20px 15px;
+}
+
+@media (min-width: 421px) {
+  .content, .project-list li {
+    padding: 30px 40px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .content, .project-list li {
+    padding: 40px 60px;
+  }
 }
 
 header {
-  background: #33292F;
   width: 100%;
-  height: 80px;
+  height: 60px;
   position: fixed;
   top: 0;
+}
+
+header img {
+  height: 30px;
 }
 
 header .wrapper {
@@ -497,15 +511,11 @@ header .wrapper {
   display: flex;
   align-items: center;
   flex-direction: row;
-  padding: 0 30px;
+  padding: 0 20px;
 }
 
 .header-logo {
-  width: 70px;
-}
-
-.header-logo img {
-  height: 30px;
+  flex-grow: 1;
 }
 
 .header-spacing {
@@ -513,8 +523,14 @@ header .wrapper {
 }
 
 .menu-icon-wrapper {
-  width: 30px;
-  padding-top: 4px;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  padding: 115px 0 0 50px;
+  background: rgba(32, 41, 59, 0.1);
+  position: fixed;
+  top: -100px;
+  right: -100px;
 }
 
 .menu-icon-wrapper:hover {
@@ -522,28 +538,26 @@ header .wrapper {
 }
 
 .menu-icon-wrapper:hover .menu-icon-line {
-  margin-bottom: 7px;
+  background: #F0754D;
 }
 
-@media (min-width: 321px) {
-  .menu-icon-wrapper:hover .menu-icon-line {
-    margin-bottom: 8px;
-  }
+.menu-icon {
+  width: 30px;
 }
 
 .menu-icon-line {
-  height: 3px;
+  height: 5px;
   margin-bottom: 6px;
-  background: #EF532F;
+  background: #E36899;
 }
 
 .nav-wrapper {
   position: fixed;
-  top: 80px;
+  top: 60px;
   left: 0;
-  height: calc(100% - 80px);
+  height: calc(100% - 60px);
   width: 100%;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(32, 41, 59, 0.9);
   display: none;
   align-items: center;
   flex-direction: column;
@@ -563,14 +577,14 @@ header .wrapper {
   display: inline-block;
   padding: 15px 30px;
   text-decoration: none;
-  color: #EF532F;
+  color: #F0754D;
   text-align: center;
   font-size: 1.2rem;
   font-weight: 600;
 }
 
 .nav-wrapper ul a:hover {
-  color: #F5F5F5;
+  color: #F7F6F5;
 }
 
 .nav-inner {
@@ -599,7 +613,7 @@ header .wrapper {
 
 .link-disc:hover {
   cursor: pointer;
-  background-color: #33292F;
+  background-color: #262730;
 }
 
 .link-disc:last-child {
@@ -618,75 +632,141 @@ header .wrapper {
   background-image: url("../img/email-icon.png");
 }
 
-.introduction {
-  background: #EF532F;
-  margin-top: 80px;
-  color: #FFDFD9;
-  padding: 40px 0;
+.intro {
+  padding-top: 20px;
+  background: #F7F6F5;
 }
 
-.introduction p {
-  color: #F5F5F5;
-  line-height: 2rem;
-  font-size: 1.8rem;
-  font-weight: 300;
-  font-family: "Open Sans", "Helvetica Neue", "Arial", sans-serif;
-  letter-spacing: 0.0425em;
+.intro-main {
+  font-size: 2rem;
+  font-family: "Source Serif Pro", "Times New Roman", serif;
 }
 
-.introduction .intro-mid {
-  color: #FFBBAD;
+.intro-sub {
+  font-size: 1.1rem;
 }
 
-.introduction .intro-light {
-  color: #FF9D8A;
+.project-list {
+  list-style-type: none;
+  padding-left: 0;
+  background: #F7F6F5;
 }
 
-.portfolio-grid-wrapper {
+.project-list li {
+  border-bottom: 1px solid #A5A5A8;
+}
+
+.project-list li:hover {
+  background: #F7EBEF;
+  cursor: pointer;
+  border-color: #E36899;
+}
+
+.project-item {
   display: flex;
+  flex-wrap: wrap;
 }
 
-h1 {
-  display: inline-block;
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  color: #33292F;
-  padding-top: 0px;
+.project-source {
+  flex-grow: 0;
+  order: 3;
+  flex-basis: 100%;
+  color: #6A6A6B;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-top: 15px;
+}
+
+@media (min-width: 769px) {
+  .project-source {
+    order: 2;
+    flex-grow: 1;
+    flex-basis: auto;
+    margin-top: 0;
+  }
+}
+
+.project-title {
+  display: flex;
+  color: #E36899;
+  order: 1;
+  flex-grow: 1;
+}
+
+@media (min-width: 769px) {
+  .project-title {
+    order: 1;
+    width: 50%;
+    flex-grow: 0;
+  }
+}
+
+.project-year {
+  font-size: 0.7rem;
+  display: flex;
+  order: 2;
+  width: 100px;
+  text-align: right;
+  color: #6A6A6B;
+  font-weight: 300;
+  flex-basis: 100%;
+}
+
+@media (min-width: 421px) {
+  .project-year {
+    flex-basis: auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .project-year {
+    order: 3;
+  }
+}
+
+.date-seperator {
+  margin: 0 5px;
+}
+
+.contact-links {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact-links li {
+  flex-grow: 0;
+  margin: 25px 25px 0 0;
 }
 
 h2 {
-  color: #33292F;
-  font-size: 0.7rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  flex-grow: 0;
-  margin: 0;
-  font-family: "Open Sans", "Helvetica Neue", "Arial", sans-serif;
-}
-
-h3 {
-  font-family: "Open Sans", "Helvetica Neue", "Arial", sans-serif;
-  font-size: 1.7rem;
-  font-weight: 300;
-}
-
-.section-header {
-  display: flex;
-  align-items: center;
-}
-
-.section-break {
-  height: 1px;
-  background: #c8c8c8;
-  flex-grow: 1;
-  margin: 0 15px;
+  color: #6A6A6B;
+  font-weight: 400;
+  font-size: 1.4rem;
 }
 
 p {
-  font-family: "Open Sans", "Helvetica Neue", "Arial", sans-serif;
-  line-height: 1.5rem;
-  font-size: 1rem;
-  letter-spacing: 0.0425em;
+  line-height: 1.5em;
+}
+
+a {
+  color: #E36899;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #E36899;
+  border-color: #E36899;
+}
+
+.block-link {
+  background: #E36899;
+  padding: 3px 5px;
+  color: #F7F6F5;
+}
+
+.block-link:hover {
+  background: #FF4255;
+  color: #F7F6F5;
 }
