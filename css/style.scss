@@ -57,6 +57,23 @@ html {
       text-align:center;
   }
 
+  // ============================== PAGES ============================== //
+
+  .page-1 {
+      height:100vh;
+      width:100vh;
+
+      background:$peach;
+  }
+
+  .page-2 {
+    height:100vh;
+    width:100vh;
+
+    background:$pink;
+}
+
+
 // ============================== LAYOUT ============================== //
 
 .page-wrapper {
@@ -380,7 +397,7 @@ h2::after {
     width:100px;
     background:url(../img/spacer.png);
     display:block;
-    margin:15px auto;
+    margin:25px auto;
 }
 
 p {
@@ -391,11 +408,11 @@ a {
     color:$peach;
     text-decoration:none;
     padding-bottom:2px;
-    //border-bottom:2px dotted $peach;
+
 
     &:hover {
         color:$pink;
-        border-color:$pink;
+        border-bottom:2px solid $peach;
     }
 }
 

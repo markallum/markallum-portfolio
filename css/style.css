@@ -468,6 +468,18 @@ html {
   text-align: center;
 }
 
+.page-1 {
+  height: 100vh;
+  width: 100vh;
+  background: #ff8e6b;
+}
+
+.page-2 {
+  height: 100vh;
+  width: 100vh;
+  background: #ff6b6b;
+}
+
 .page-wrapper {
   display: flex;
   min-height: 100vh;
@@ -757,7 +769,7 @@ h2::after {
   width: 100px;
   background: url(../img/spacer.png);
   display: block;
-  margin: 15px auto;
+  margin: 25px auto;
 }
 
 p {
@@ -772,7 +784,7 @@ a {
 
 a:hover {
   color: #ff6b6b;
-  border-color: #ff6b6b;
+  border-bottom: 2px solid #ff8e6b;
 }
 
 .block-link {
