@@ -1,5 +1,5 @@
 let isMenuOpen = false;
-let currentPage = 0;
+let currentPage = 1;
 
 window.onload=function(){
     (function(d){
@@ -14,14 +14,6 @@ window.onload=function(){
      };
      for(var a in touch){d.addEventListener(a,touch[a],false);}
     })(document);
-    //EXAMPLE OF USE
-    // var h=function(e){console.log(e.type,e)};
-    // document.body.addEventListener('fc',h,false);// 0-50ms vs 500ms with normal click
-    // document.body.addEventListener('swl',h,false);
-    // document.body.addEventListener('swr',h,false);
-    // document.body.addEventListener('swu',h,false);
-    // document.body.addEventListener('swd',h,false);
-
 
     var nextPage = () => {
         switchPage(-1);
@@ -30,45 +22,66 @@ window.onload=function(){
     var prevPage = () => {
         switchPage(1);
     }
-    function switchPage(increment) {
-        
-        // let nav = document.getElementById('nav');
-        // if (isMenuOpen) {
-        //     nav.classList.remove('active');
-        // } else {
-        //     nav.classList.add('active');
-        // }
-        // isMenuOpen = !isMenuOpen;
     
-        let wrapper = document.getElementById('slide');
-        const newPage  = currentPage + increment;
-        if (newPage === 0) {
-            wrapper.style.left = '0';
-            currentPage = 0;
-        } else if (newPage >= 4) {
-            
-        } else {
-            const leftValue = '-' + newPage + '00%';
-            wrapper.style.left = leftValue;
-            currentPage = newPage;
-        }
 
-        console.log(currentPage);
-    }
+    
 
     let pages = document.getElementsByClassName('page');
 
     // console.log(pages);
 
-    for(let i = 0; i < pages.length - 0; i++) {
+    for(let i = 0; i < pages.length; i++) {
         // console.log(pages[i]);
         pages[i].addEventListener('swl', prevPage, false);
         pages[i].addEventListener('swr', nextPage, false);
     }
 
    
+}
+
+function switchPage(increment) {
+        
+        
+    
+    let wrapper = document.getElementById('slide');
+    let progressIndicator = document.getElementById('progressIndicator');
+
+    const newPage  = currentPage + increment;
+    const newProgressPosition = (newPage - 1) * 25;
+
+    if (newPage === 1) {
+        wrapper.style.left = '0';
+        currentPage = 1;
+        progressIndicator.style.marginLeft = newProgressPosition + '%';
+    } else if (newPage < 5 && newPage > 0) {
+        const leftValue = '-' + (newPage -1) + '00%';
+        wrapper.style.left = leftValue;
+        currentPage = newPage;
+        progressIndicator.style.marginLeft = newProgressPosition + '%';
+
     }
 
+
+    
+    
+}
+
+function goToPage(page) {
+    let increment = page - currentPage;
+    switchPage(increment);
+    toggleMenu();
+}
+
+
+    function toggleMenu() {
+        let nav = document.getElementById('nav');
+        if (isMenuOpen) {
+            nav.classList.remove('menu-open');
+        } else {
+            nav.classList.add('menu-open');
+        }
+        isMenuOpen = !isMenuOpen;
+    }
     
 
 

@@ -26,7 +26,7 @@
         
                     </div>
         
-                    <div onclick="switchPage(1)" class="menu-icon-wrapper">
+                    <div onclick="toggleMenu()" class="menu-icon-wrapper">
                             <div class="menu-icon">
                                     <div class="menu-icon-line">
                 
@@ -44,16 +44,16 @@
                                 <nav class="nav-inner">
                                     <ul>
                                         <li>
-                                            <a href="#">Projects</a>
+                                            <a onclick="goToPage(1)">Home</a>
                                         </li>
                                         <li>
-                                            <a href="#">About</a>
+                                            <a onclick="goToPage(2)">About</a>
                                         </li>
                                         <li>
-                                            <a href="#">Contact</a>
+                                            <a onclick="goToPage(3)">Projects</a>
                                         </li>
                                         <li>
-                                            <a href="#">Blog</a>
+                                            <a onclick="goToPage(4)">Contact</a>
                                         </li>
                                     </ul>
                 
@@ -71,7 +71,9 @@
                     
                 </div>
         
-        
+                <div class="progress-bar">
+                    <div class="progress-indicator" id="progressIndicator"></div>
+                </div>
         
         
             </header>
@@ -90,11 +92,11 @@
                 </div>
 
                 <div class="page page-portfolio">
-                        <h1>Portfolio</h1>
+                        <h1 class="light">Portfolio</h1>
                 </div>
 
                 <div class="page page-contact">
-                        <h1 class="light">Contact</h1>
+                        <h1>Contact</h1>
                 </div>
     
         </div>

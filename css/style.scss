@@ -75,6 +75,8 @@ html {
       width:100%;
 
       left:-0;
+
+      transition: left 0.3s ease-in-out;
   }
 
   .page {
@@ -82,7 +84,7 @@ html {
     top:0;
     bottom:0;
     width:100%;
-    padding:calc(50px + 5%) 5% 5% 5%;
+    padding:calc(55px + 5%) 5% 5% 5%;
   }
 
   .page-intro {
@@ -95,12 +97,12 @@ html {
 }   
 .page-portfolio {
     @extend .page;
+    background:$peach;
     left:200%;
 }    
 .page-contact {
     @extend .page;
     left:300%;
-    background:$pink;
 }   
 
 
@@ -145,7 +147,7 @@ header {
    z-index:5;
     
     width:100%;
-    height:50px;
+    height:55px;
 
     position:fixed;
     top:0;
@@ -155,22 +157,49 @@ header {
     }
 
     .wrapper {
-        height:100%;
         display:flex;
         align-items:center;
         flex-direction:row;
-        padding:0 40px;
+        
     }
 }
 
 
 .header-logo {
+
+    width:60px;
+    height:50px;
+    display:flex;
+    align-items:center;
+
+    img {
+        margin:0 auto;
+    }
+
+    &:hover {
+        background:$light-peach;
+        cursor:pointer;
+    }
+}
+
+.header-spacing {
     flex-grow:1;
 }
 
 
-.header-spacing {
-    flex-grow:1;
+
+.progress-bar {
+    height:5px;
+    background:#F2BEAE;
+
+    display:flex;
+}
+
+.progress-indicator {
+    width:25%;
+    height:5px;
+    background:$pink;
+    transition:margin-left 0.3s ease-in-out;
 }
 
 
@@ -178,10 +207,14 @@ header {
 
 .menu-icon-wrapper {
 
-
+    width:50px;
+    height:50px;
+    display:flex;
+    padding:18px 15px;
     
     &:hover {
         cursor: pointer;
+        background:$light-peach;
 
         .menu-icon-line {
             background:$red
@@ -209,17 +242,21 @@ header {
 
 .nav-wrapper {
     position:fixed;
-    top:60px;
-    left:0;
-    height:calc(100% - 60px);
-    width:100%;
+    top:55px;
+    right:0;
+    width:auto;
+    height:calc(100% - 55px);
+    width:230px;
     background:rgba(32, 41, 59, 0.9);
-    display:none;
     align-items:center;
     flex-direction:column;
+    z-index:6;
+    display:flex;
+    transform:scale(0);
+    transition: transform .4s cubic-bezier(.5,0,.3,1);
 
     &.menu-open {
-        display:flex;
+        transform: scale(1);
     }
 
 
@@ -243,6 +280,8 @@ header {
 
             &:hover {
                 color:$light;
+                cursor:pointer;
+                border-bottom:0;
             }
         }
     }
@@ -263,7 +302,7 @@ header {
 }
 
 .link-disc {
-    background-color: rgba(239, 83, 47, 0.6);
+    background-color:$pink;
 	width:60px;
 	height:60px;
 	margin-right:10px;
@@ -273,7 +312,7 @@ header {
     background-position:15px;
 	&:hover {
 		cursor:pointer;
-		background-color:$dark;
+		background-color:$light-peach;
 	}
 
 	&:last-child {
