@@ -26,7 +26,6 @@ body {
     background:$light;
     color:$blue;
     height:100%;
-    overflow-x:hidden;
 }
 
 html {
@@ -59,28 +58,55 @@ html {
 
   // ============================== PAGES ============================== //
 
-  .page-1 {
-      height:100vh;
-      width:100vh;
-
-      background:$peach;
+  .page-wrapper {
+    z-index:2;
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    overflow:hidden;
   }
 
-  .page-2 {
-    height:100vh;
-    width:100vh;
+  .slide-wrapper {
+      position:absolute;
+      top:0;
+      bottom:0;
+      width:100%;
 
+      left:-0;
+  }
+
+  .page {
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:100%;
+    padding:calc(50px + 5%) 5% 5% 5%;
+  }
+
+  .page-intro {
+    @extend .page;
+    background:$peach;
+}  
+.page-about {
+    @extend .page;
+    left:100%;
+}   
+.page-portfolio {
+    @extend .page;
+    left:200%;
+}    
+.page-contact {
+    @extend .page;
+    left:300%;
     background:$pink;
-}
+}   
 
 
 // ============================== LAYOUT ============================== //
 
-.page-wrapper {
-    display:flex;
-    min-height:100vh;
-    flex-direction:column;
-}
+
 
 .page-content {
     flex:1;
@@ -116,16 +142,16 @@ html {
 
 header {
     background:$white;
-   
+   z-index:5;
     
     width:100%;
-    height:80px;
+    height:50px;
 
     position:fixed;
     top:0;
 
     img {
-        height:30px;
+        height:20px;
     }
 
     .wrapper {
@@ -165,13 +191,13 @@ header {
 
 .menu-icon {
     //background:$red;
-    width:30px;
+    width:20px;
 }
 
 
 .menu-icon-line {
-    height:5px;
-    margin-bottom:6px;
+    height:2px;
+    margin-bottom:3px;
     background:$pink;
 
 
@@ -383,6 +409,14 @@ footer {
 }
 
 // ============================== TYPOGRAPHY ============================== //
+
+.light {
+    color:$white;
+}
+
+h1 {
+    font-size:2rem;
+}
 
 h2 {
     color:$grey;

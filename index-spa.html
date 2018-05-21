@@ -26,7 +26,7 @@
         
                     </div>
         
-                    <div onclick="ToggleMenu()" class="menu-icon-wrapper">
+                    <div onclick="switchPage(1)" class="menu-icon-wrapper">
                             <div class="menu-icon">
                                     <div class="menu-icon-line">
                 
@@ -76,12 +76,33 @@
         
             </header>
 
+<div class="page-wrapper">
+        <div class="slide-wrapper" id="slide">
 
-      <div class="page-1"></div>
+                <div class="page page-intro">
+                    <h1 class="light">Introduction</h1>
 
-      <div class="page-2">
+                    <button type="button" onclick="Next()">Next</button>
+                </div>
+    
+                <div class="page page-about">
+                        <h1>About</h1>
+                </div>
 
-    </div>
+                <div class="page page-portfolio">
+                        <h1>Portfolio</h1>
+                </div>
+
+                <div class="page page-contact">
+                        <h1 class="light">Contact</h1>
+                </div>
+    
+        </div>
+</div>
+    
+
+
+        
 
 
     <script src="js/main.js"></script>
