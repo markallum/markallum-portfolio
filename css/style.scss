@@ -14,6 +14,7 @@ $grey:#6A6A6B;
 $light-grey:#A5A5A8;
 $white:#FCFAFA;
 
+$dark-peach:#A18881;
 $peach:#ff8e6b;
 $light-peach:#FCEBE6;
 
@@ -26,6 +27,8 @@ body {
     background:$light;
     color:$blue;
     height:100%;
+    overflow-x:hidden;
+    overflow-y:visible;
 }
 
 html {
@@ -59,13 +62,13 @@ html {
   // ============================== PAGES ============================== //
 
   .page-wrapper {
-    z-index:2;
+    z-index:1;
     position:absolute;
     left:0;
     right:0;
     top:0;
     bottom:0;
-    overflow:hidden;
+    overflow-x:hidden;
   }
 
   .slide-wrapper {
@@ -82,27 +85,38 @@ html {
   .page {
     position:absolute;
     top:0;
-    bottom:0;
+    //bottom:0;
     width:100%;
-    padding:calc(55px + 5%) 5% 5% 5%;
+    overflow-y:visible;
+    
+    height:100%;
+  }
+
+  .page-inner {
+      margin-top:55px;
+    padding:5%;
+      height:calc(100% - 55px);
+      overflow-y:scroll;
   }
 
   .page-intro {
     @extend .page;
-    background:$peach;
+    background:$light-peach;
 }  
 .page-about {
     @extend .page;
+    background:$peach;
     left:100%;
 }   
 .page-portfolio {
     @extend .page;
-    background:$peach;
+    background:$light-peach;
     left:200%;
 }    
 .page-contact {
     @extend .page;
     left:300%;
+    background:$peach;
 }   
 
 
@@ -144,7 +158,7 @@ html {
 
 header {
     background:$white;
-   z-index:5;
+    z-index:3;
     
     width:100%;
     height:55px;
@@ -242,7 +256,7 @@ header {
 
 .nav-wrapper {
     position:fixed;
-    top:55px;
+    top:calc(-100%);
     right:0;
     width:auto;
     height:calc(100% - 55px);
@@ -250,13 +264,13 @@ header {
     background:rgba(32, 41, 59, 0.9);
     align-items:center;
     flex-direction:column;
-    z-index:6;
+    z-index:2;
     display:flex;
-    transform:scale(0);
-    transition: transform .4s cubic-bezier(.5,0,.3,1);
+    transition:top 0.3s ease-in-out;
+
 
     &.menu-open {
-        transform: scale(1);
+        top:55px;
     }
 
 
@@ -334,23 +348,31 @@ header {
 
 // ============================== INTRODUCTION ============================== //
 
-.intro {
-    padding-top:60px;
-    background:$light;
-    text-align:center;
-
-}
 
 .intro-main {
-    font-size:2rem;
-    font-family:$font-serif;
+    font-size:1.4rem;
+    font-family:$font-sans;
+    color:$peach;
+    margin-bottom:50px;
 }
 
-.intro-sub {
-    font-size:1.1rem;
+.intro-light {
+    color:#ED9174;
 }
 
+.intro-lighter {
+    color:#DB927B;
+}
 
+.intro-lightest {
+    color:#C98F7D;
+}
+
+.touchHelper {
+    color:#A18881;
+    font-size:0.9rem;
+
+}
 // ============================== PROJECTS ============================== //
 
 .project-list {
@@ -450,12 +472,16 @@ footer {
 // ============================== TYPOGRAPHY ============================== //
 
 .light {
-    color:$white;
+    color:$light-peach;
+}
+
+.dark {
+   color:$dark-peach; 
 }
 
 h1 {
     font-size:2rem;
-}
+    margin-top:15px;}
 
 h2 {
     color:$grey;
@@ -476,6 +502,11 @@ h2::after {
 p {
     line-height:1.5em;
 }
+
+.main-paragraph {
+    font-size:1.1rem;
+}
+
 
 a {
     color:$peach;

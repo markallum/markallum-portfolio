@@ -49,16 +49,20 @@ function switchPage(increment) {
     const newPage  = currentPage + increment;
     const newProgressPosition = (newPage - 1) * 25;
 
+    let pageElement = document.querySelectorAll('[data-page-id]');
+
+        // refactor this, starting to get repeated code
     if (newPage === 1) {
         wrapper.style.left = '0';
         currentPage = 1;
         progressIndicator.style.marginLeft = newProgressPosition + '%';
+        window.scrollTo(0,0);
     } else if (newPage < 5 && newPage > 0) {
         const leftValue = '-' + (newPage -1) + '00%';
         wrapper.style.left = leftValue;
         currentPage = newPage;
         progressIndicator.style.marginLeft = newProgressPosition + '%';
-
+        window.scrollTo(0,0);
     }
 
 

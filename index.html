@@ -13,7 +13,33 @@
 
 <body>
 
+        <div id="nav" class="nav-wrapper">
+                <nav class="nav-inner">
+                    <ul>
+                        <li>
+                            <a onclick="goToPage(1)">Home</a>
+                        </li>
+                        <li>
+                            <a onclick="goToPage(2)">About</a>
+                        </li>
+                        <li>
+                            <a onclick="goToPage(3)">Projects</a>
+                        </li>
+                        <li>
+                            <a onclick="goToPage(4)">Contact</a>
+                        </li>
+                    </ul>
 
+                </nav>
+
+                    <div class="header-links">
+                        <div class="link-disc github"></div>
+                        <div class="link-disc linkedin"></div>
+                        <div class="link-disc email"></div>
+                    </div>
+                
+
+            </div>
         
         <header>
 
@@ -40,33 +66,7 @@
                             </div>
                                 
                             </div>
-                            <div id="nav" class="nav-wrapper">
-                                <nav class="nav-inner">
-                                    <ul>
-                                        <li>
-                                            <a onclick="goToPage(1)">Home</a>
-                                        </li>
-                                        <li>
-                                            <a onclick="goToPage(2)">About</a>
-                                        </li>
-                                        <li>
-                                            <a onclick="goToPage(3)">Projects</a>
-                                        </li>
-                                        <li>
-                                            <a onclick="goToPage(4)">Contact</a>
-                                        </li>
-                                    </ul>
-                
-                                </nav>
-                
-                                    <div class="header-links">
-                                        <div class="link-disc github"></div>
-                                        <div class="link-disc linkedin"></div>
-                                        <div class="link-disc email"></div>
-                                    </div>
-                                
-                
-                            </div>
+                            
         
                     
                 </div>
@@ -78,29 +78,41 @@
         
             </header>
 
-<div class="page-wrapper">
+            
+
+
         <div class="slide-wrapper" id="slide">
 
-                <div class="page page-intro">
-                    <h1 class="light">Introduction</h1>
+                <div class="page page-intro dark" data-page-id="1">
+                    <div class="page-inner">
+                    <p class="intro-main">Hi, I'm Mark. 
+                        <span class="intro-light">I design &amp; develop for the web. </span>
+                        <span class="intro-lighter">I'm living in Nottingham and </span>
+                        <span class="intro-lightest">I'm available for hire.</span></p>
 
-                    <button type="button" onclick="Next()">Next</button>
+                        <p class="touchHelper">You can switch pages by swiping left/right!</p>
+                        </div>
                 </div>
     
-                <div class="page page-about">
-                        <h1>About</h1>
+                <div class="page page-about light">
+                    <div class="page-inner">
+                            <h1>About</h1>
+                            <p class="main-paragraph">I've been creating for the web professionally for over 7 years now. I'm a one man team with experience with everything from UI to databases. I love diving into new projects and seeing what challenges they bring, and feeling the pride of a well crafted solution.</p>
+                            <p>I also love to cook, but you probably shouldn't hire me for that.</p>
+                    </div>
+                    
                 </div>
 
-                <div class="page page-portfolio">
-                        <h1 class="light">Portfolio</h1>
+                <div class="page page-portfolio dark">
+                        <h1>Portfolio</h1>
                 </div>
 
-                <div class="page page-contact">
+                <div class="page page-contact light">
                         <h1>Contact</h1>
                 </div>
     
         </div>
-</div>
+
     
 
 

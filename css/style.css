@@ -435,6 +435,8 @@ body {
   background: #F2F2F2;
   color: #20293B;
   height: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 html {
@@ -468,13 +470,13 @@ html {
 }
 
 .page-wrapper {
-  z-index: 2;
+  z-index: 1;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .slide-wrapper {
@@ -489,26 +491,35 @@ html {
 .page, .page-intro, .page-about, .page-portfolio, .page-contact {
   position: absolute;
   top: 0;
-  bottom: 0;
   width: 100%;
-  padding: calc(55px + 5%) 5% 5% 5%;
+  overflow-y: visible;
+  height: 100%;
+}
+
+.page-inner {
+  margin-top: 55px;
+  padding: 5%;
+  height: calc(100% - 55px);
+  overflow-y: scroll;
 }
 
 .page-intro {
-  background: #ff8e6b;
+  background: #FCEBE6;
 }
 
 .page-about {
+  background: #ff8e6b;
   left: 100%;
 }
 
 .page-portfolio {
-  background: #ff8e6b;
+  background: #FCEBE6;
   left: 200%;
 }
 
 .page-contact {
   left: 300%;
+  background: #ff8e6b;
 }
 
 .page-content {
@@ -544,7 +555,7 @@ html {
 
 header {
   background: #FCFAFA;
-  z-index: 5;
+  z-index: 3;
   width: 100%;
   height: 55px;
   position: fixed;
@@ -622,7 +633,7 @@ header .wrapper {
 
 .nav-wrapper {
   position: fixed;
-  top: 55px;
+  top: calc(-100%);
   right: 0;
   width: auto;
   height: calc(100% - 55px);
@@ -630,14 +641,13 @@ header .wrapper {
   background: rgba(32, 41, 59, 0.9);
   align-items: center;
   flex-direction: column;
-  z-index: 6;
+  z-index: 2;
   display: flex;
-  transform: scale(0);
-  transition: transform 0.4s cubic-bezier(0.5, 0, 0.3, 1);
+  transition: top 0.3s ease-in-out;
 }
 
 .nav-wrapper.menu-open {
-  transform: scale(1);
+  top: 55px;
 }
 
 .nav-wrapper ul {
@@ -707,19 +717,28 @@ header .wrapper {
   background-image: url("../img/email-icon.png");
 }
 
-.intro {
-  padding-top: 60px;
-  background: #F2F2F2;
-  text-align: center;
-}
-
 .intro-main {
-  font-size: 2rem;
-  font-family: "Source Serif Pro", "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-family: "Work Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: #ff8e6b;
+  margin-bottom: 50px;
 }
 
-.intro-sub {
-  font-size: 1.1rem;
+.intro-light {
+  color: #ED9174;
+}
+
+.intro-lighter {
+  color: #DB927B;
+}
+
+.intro-lightest {
+  color: #C98F7D;
+}
+
+.touchHelper {
+  color: #A18881;
+  font-size: 0.9rem;
 }
 
 .project-list {
@@ -820,11 +839,16 @@ footer {
 }
 
 .light {
-  color: #FCFAFA;
+  color: #FCEBE6;
+}
+
+.dark {
+  color: #A18881;
 }
 
 h1 {
   font-size: 2rem;
+  margin-top: 15px;
 }
 
 h2 {
@@ -845,6 +869,10 @@ h2::after {
 
 p {
   line-height: 1.5em;
+}
+
+.main-paragraph {
+  font-size: 1.1rem;
 }
 
 a {
