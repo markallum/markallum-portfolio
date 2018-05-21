@@ -14,11 +14,12 @@ $grey:#6A6A6B;
 $light-grey:#A5A5A8;
 $white:#FCFAFA;
 
+$pale-peach:#F0BCAD;
 $dark-peach:#A18881;
 $peach:#ff8e6b;
 $light-peach:#FCEBE6;
 
-$breakpoints: (phone: 420px, tablet: 768px, desktop: 1200px);
+$breakpoints: (phone: 420px, nav-switch: 620px, tablet: 768px, desktop: 1200px);
 
 // ============================== CORE ============================== //
 
@@ -167,8 +168,9 @@ header {
     width:100%;
     height:55px;
 
-    position:fixed;
+    position:relative;
     top:0;
+    right:0;
 
     img {
         height:20px;
@@ -189,6 +191,7 @@ header {
     height:50px;
     display:flex;
     align-items:center;
+    transition:background 0.3s ease-in-out;
 
     img {
         margin:0 auto;
@@ -196,6 +199,19 @@ header {
 
     &:hover {
         background:$light-peach;
+    }
+}
+
+.logo-link {
+
+    display:inline-block;
+    width:60px;
+    height:50px;
+    display:flex;
+    align-items:center;
+
+    &:hover {
+        border:0;
         cursor:pointer;
     }
 }
@@ -229,6 +245,10 @@ header {
     height:50px;
     display:flex;
     padding:18px 15px;
+
+    @include media(">nav-switch") {
+        display:none;
+    }
     
     &:hover {
         cursor: pointer;
@@ -265,7 +285,7 @@ header {
     width:auto;
     height:calc(100% - 55px);
     width:230px;
-    background:rgba(32, 41, 59, 0.9);
+    background:rgba(245, 245, 245, 0.9);
     align-items:center;
     flex-direction:column;
     z-index:2;
@@ -277,11 +297,23 @@ header {
         top:55px;
     }
 
+    @include media(">nav-switch") {
+        position:static;
+        width:auto;
+        flex-direction:row;
+        background:$white;
+    }
+
 
     ul {
         list-style-type:none;
         margin:0 auto;
         padding:0 0 30px 0;
+
+        @include media(">nav-switch") {
+            display:flex;
+            padding:0;
+        }
         
         li {
             
@@ -291,13 +323,29 @@ header {
             display:inline-block;
             padding:15px 30px;
             text-decoration:none;
-            color:$red;
+            color:$pink;
             text-align:center;
             font-size:1.2rem;
             font-weight:600;
 
+            @include media(">nav-switch") {
+                height:50px;
+                font-size:0.65rem;
+                text-transform:uppercase;
+                font-weight:400;
+                transition:background 0.3s ease-in-out;
+
+                &.current-link {
+                    font-weight:600;
+                }
+
+                &:hover {
+                    background:$light-peach;
+                }
+            }
+
             &:hover {
-                color:$light;
+                color:$peach;
                 cursor:pointer;
                 border-bottom:0;
             }
@@ -312,25 +360,36 @@ header {
     width:100%;
     display:flex;
     align-items:center;
+
+    @include media(">nav-switch") {
+        flex-grow:0;
+    }
 }
 
 .header-links {
     display:flex;
     padding-bottom:15px;
+
+    @include media(">nav-switch") {
+        padding:0;
+        margin:0 15px;
+    }
 }
 
 .link-disc {
-    background-color:$pink;
-	width:60px;
-	height:60px;
-	margin-right:10px;
+	width:30px;
+	height:30px;
+    margin-right:10px;
+    border:3px solid $pink;
 	border-radius:60px;
-	transition:background-color 0.3s ease-in-out;
     background-repeat:no-repeat;
-    background-position:15px;
+    transition:background-position 0.3s ease-in-out,
+     border-color 0.3s ease-in-out,
+     background-size 0.3s ease-in-out;
 	&:hover {
 		cursor:pointer;
-		background-color:$light-peach;
+        border-color:$peach;
+        background-color:$light-peach;
 	}
 
 	&:last-child {
@@ -339,7 +398,12 @@ header {
 }
 
 .github {
-	background-image:url('../img/github-icon.png');
+    background-image:url('../img/github-icon.png');
+    background-position:-1px 4px;
+
+    &:hover {
+        background-position:-4px 2px;
+    }
 }
 
 .linkedin {
@@ -347,7 +411,14 @@ header {
 }
 
 .email {
-	background-image:url('../img/email-icon.png');
+    background-image:url('../img/email-icon.png');
+    background-size:80%;
+    background-position:3px 5px;
+
+    &:hover {
+        background-size:100%;
+        background-position:0px 4px;
+    }
 }
 
 // ============================== INTRODUCTION ============================== //
@@ -485,7 +556,19 @@ footer {
 
 h1 {
     font-size:2rem;
-    margin-top:15px;}
+    margin-top:15px;
+    text-transform:uppercase;
+    font-weight:600;
+
+    &:after {
+        content:'';
+        display:block;
+        width:200px;
+        height:2px;
+        background:$pale-peach;
+        margin-top:25px;
+    }
+}
 
 h2 {
     color:$grey;

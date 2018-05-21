@@ -27,11 +27,12 @@ window.onload=function(){
     
 
     let pages = document.getElementsByClassName('page');
-
+    // let pages = document.getElementById('slide');
+    // pages.addEventListener('swl', prevPage, false);
+    // pages.addEventListener('swr', nextPage, false);
     // console.log(pages);
 
     for(let i = 0; i < pages.length; i++) {
-        // console.log(pages[i]);
         pages[i].addEventListener('swl', prevPage, false);
         pages[i].addEventListener('swr', nextPage, false);
     }
@@ -49,20 +50,24 @@ function switchPage(increment) {
     const newPage  = currentPage + increment;
     const newProgressPosition = (newPage - 1) * 25;
 
-    let pageElement = document.querySelectorAll('[data-page-id]');
+    let oldLinkElement = document.getElementsByClassName('current-link');
+    let newLinkElement = document.getElementsByClassName('navLink' + newPage);
 
         // refactor this, starting to get repeated code
     if (newPage === 1) {
         wrapper.style.left = '0';
         currentPage = 1;
         progressIndicator.style.marginLeft = newProgressPosition + '%';
-        window.scrollTo(0,0);
+        oldLinkElement[0].classList.remove('current-link');
+        newLinkElement[0].classList.add('current-link');
+
     } else if (newPage < 5 && newPage > 0) {
         const leftValue = '-' + (newPage -1) + '00%';
         wrapper.style.left = leftValue;
         currentPage = newPage;
         progressIndicator.style.marginLeft = newProgressPosition + '%';
-        window.scrollTo(0,0);
+        oldLinkElement[0].classList.remove('current-link');
+        newLinkElement[0].classList.add('current-link');
     }
 
 
@@ -73,7 +78,7 @@ function switchPage(increment) {
 function goToPage(page) {
     let increment = page - currentPage;
     switchPage(increment);
-    toggleMenu();
+    closeMenu();
 }
 
 
@@ -86,6 +91,13 @@ function goToPage(page) {
         }
         isMenuOpen = !isMenuOpen;
     }
+
+function closeMenu() {
+    let nav = document.getElementById('nav');
+    if (isMenuOpen) {
+        nav.classList.remove('menu-open');
+    }
+}
     
 
 

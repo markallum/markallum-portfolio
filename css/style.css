@@ -562,8 +562,9 @@ header {
   z-index: 3;
   width: 100%;
   height: 55px;
-  position: fixed;
+  position: relative;
   top: 0;
+  right: 0;
 }
 
 header img {
@@ -581,6 +582,7 @@ header .wrapper {
   height: 50px;
   display: flex;
   align-items: center;
+  transition: background 0.3s ease-in-out;
 }
 
 .header-logo img {
@@ -589,6 +591,18 @@ header .wrapper {
 
 .header-logo:hover {
   background: #FCEBE6;
+}
+
+.logo-link {
+  display: inline-block;
+  width: 60px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-link:hover {
+  border: 0;
   cursor: pointer;
 }
 
@@ -614,6 +628,12 @@ header .wrapper {
   height: 50px;
   display: flex;
   padding: 18px 15px;
+}
+
+@media (min-width: 621px) {
+  .menu-icon-wrapper {
+    display: none;
+  }
 }
 
 .menu-icon-wrapper:hover {
@@ -642,7 +662,7 @@ header .wrapper {
   width: auto;
   height: calc(100% - 55px);
   width: 230px;
-  background: rgba(32, 41, 59, 0.9);
+  background: rgba(245, 245, 245, 0.9);
   align-items: center;
   flex-direction: column;
   z-index: 2;
@@ -654,24 +674,56 @@ header .wrapper {
   top: 55px;
 }
 
+@media (min-width: 621px) {
+  .nav-wrapper {
+    position: static;
+    width: auto;
+    flex-direction: row;
+    background: #FCFAFA;
+  }
+}
+
 .nav-wrapper ul {
   list-style-type: none;
   margin: 0 auto;
   padding: 0 0 30px 0;
 }
 
+@media (min-width: 621px) {
+  .nav-wrapper ul {
+    display: flex;
+    padding: 0;
+  }
+}
+
 .nav-wrapper ul a {
   display: inline-block;
   padding: 15px 30px;
   text-decoration: none;
-  color: #F0754D;
+  color: #ff6b6b;
   text-align: center;
   font-size: 1.2rem;
   font-weight: 600;
 }
 
+@media (min-width: 621px) {
+  .nav-wrapper ul a {
+    height: 50px;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: background 0.3s ease-in-out;
+  }
+  .nav-wrapper ul a.current-link {
+    font-weight: 600;
+  }
+  .nav-wrapper ul a:hover {
+    background: #FCEBE6;
+  }
+}
+
 .nav-wrapper ul a:hover {
-  color: #F2F2F2;
+  color: #ff8e6b;
   cursor: pointer;
   border-bottom: 0;
 }
@@ -684,24 +736,37 @@ header .wrapper {
   align-items: center;
 }
 
+@media (min-width: 621px) {
+  .nav-inner {
+    flex-grow: 0;
+  }
+}
+
 .header-links {
   display: flex;
   padding-bottom: 15px;
 }
 
+@media (min-width: 621px) {
+  .header-links {
+    padding: 0;
+    margin: 0 15px;
+  }
+}
+
 .link-disc {
-  background-color: #ff6b6b;
-  width: 60px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
+  border: 3px solid #ff6b6b;
   border-radius: 60px;
-  transition: background-color 0.3s ease-in-out;
   background-repeat: no-repeat;
-  background-position: 15px;
+  transition: background-position 0.3s ease-in-out, border-color 0.3s ease-in-out, background-size 0.3s ease-in-out;
 }
 
 .link-disc:hover {
   cursor: pointer;
+  border-color: #ff8e6b;
   background-color: #FCEBE6;
 }
 
@@ -711,6 +776,11 @@ header .wrapper {
 
 .github {
   background-image: url("../img/github-icon.png");
+  background-position: -1px 4px;
+}
+
+.github:hover {
+  background-position: -4px 2px;
 }
 
 .linkedin {
@@ -719,6 +789,13 @@ header .wrapper {
 
 .email {
   background-image: url("../img/email-icon.png");
+  background-size: 80%;
+  background-position: 3px 5px;
+}
+
+.email:hover {
+  background-size: 100%;
+  background-position: 0px 4px;
 }
 
 .intro-main {
@@ -853,6 +930,17 @@ footer {
 h1 {
   font-size: 2rem;
   margin-top: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+h1:after {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 2px;
+  background: #F0BCAD;
+  margin-top: 25px;
 }
 
 h2 {

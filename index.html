@@ -6,51 +6,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mark Allum</title>
-    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro|Work+Sans:300,400" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,600" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     
 </head>
 
 <body>
 
-        <div id="nav" class="nav-wrapper">
-                <nav class="nav-inner">
-                    <ul>
-                        <li>
-                            <a onclick="goToPage(1)">Home</a>
-                        </li>
-                        <li>
-                            <a onclick="goToPage(2)">About</a>
-                        </li>
-                        <li>
-                            <a onclick="goToPage(3)">Projects</a>
-                        </li>
-                        <li>
-                            <a onclick="goToPage(4)">Contact</a>
-                        </li>
-                    </ul>
-
-                </nav>
-
-                    <div class="header-links">
-                        <div class="link-disc github"></div>
-                        <div class="link-disc linkedin"></div>
-                        <div class="link-disc email"></div>
-                    </div>
-                
-
-            </div>
+        
         
         <header>
 
+                
+
                 <div class="wrapper">
                     <div class="header-logo">
-                        <img src="img/logo-v1.png" >
+                        <a class="logo-link" onclick="goToPage(1)">
+                            <img src="img/logo-v1.png" >
+                        </a>
+                        
                     </div>
         
                     <div class="header-spacing">
         
                     </div>
+
+                    
         
                     <div onclick="toggleMenu()" class="menu-icon-wrapper">
                             <div class="menu-icon">
@@ -65,8 +46,36 @@
                                         </div>
                             </div>
                                 
-                            </div>
+                    </div>
+
+                    
+                    <div id="nav" class="nav-wrapper">
+                            <nav class="nav-inner">
+                                <ul>
+                                    <li>
+                                        <a class="navLink1 current-link" onclick="goToPage(1)">Home</a>
+                                    </li>
+                                    <li>
+                                        <a class="navLink2" onclick="goToPage(2)">About</a>
+                                    </li>
+                                    <li>
+                                        <a class="navLink3" onclick="goToPage(3)">Projects</a>
+                                    </li>
+                                    <li>
+                                        <a class="navLink4" onclick="goToPage(4)">Contact</a>
+                                    </li>
+                                </ul>
+            
+                            </nav>
+            
+                                <div class="header-links">
+                                    <div class="link-disc github"></div>
+                                    <div class="link-disc linkedin HIDE-ME"></div>
+                                    <div class="link-disc email"></div>
+                                </div>
                             
+            
+                    </div>   
         
                     
                 </div>
@@ -85,30 +94,44 @@
 
                     <div class="page page-intro dark" data-page-id="1">
                         <div class="page-inner">
-                        <p class="intro-main">Hi, I'm Mark. 
-                            <span class="intro-light">I design &amp; develop for the web. </span>
-                            <span class="intro-lighter">I'm living in Nottingham and </span>
+
+                            <h1>Hello!</h1>
+                            <p class="intro-main">
+                            <span class="intro-light">I'm Mark. I design &amp; develop for the web. </span>
+                            <span class="intro-lighter">I live in Nottingham and </span>
                             <span class="intro-lightest">I'm available for hire.</span></p>
     
-                            <p class="touchHelper">You can switch pages by swiping left/rightdwa!</p>
+                            <p class="touchHelper">Swipe friendly :) -></p>
                             </div>
                     </div>
         
                     <div class="page page-about light">
                         <div class="page-inner">
-                                <h1>About</h1>
-                                <p class="main-paragraph">I've been creating for the web professionally for over 7 years now. I'm a one man team with experience with everything from UI to databases. I love diving into new projects and seeing what challenges they bring, and feeling the pride of a well crafted solution.</p>
+                                <h1>About Me</h1>
+                                <p class="main-paragraph">I've been creating for the web professionally for over 7 years now. I'm a one man team with experience with everything from interface to database. I love diving into new projects and seeing what challenges they bring, and feeling the pride of a well crafted solution.</p>
+                                <p>I also love to cook and hike, but you probably shouldn't hire me for that.</p>
+
+                                <p class="main-paragraph">I've been creating for the web professionally for over 7 years now. I'm a one man team with experience with everything from interface to database. I love diving into new projects and seeing what challenges they bring, and feeling the pride of a well crafted solution.</p>
+                                <p>I also love to cook and hike, but you probably shouldn't hire me for that.</p>
+
+                                <p class="main-paragraph">I've been creating for the web professionally for over 7 years now. I'm a one man team with experience with everything from interface to database. I love diving into new projects and seeing what challenges they bring, and feeling the pride of a well crafted solution.</p>
                                 <p>I also love to cook and hike, but you probably shouldn't hire me for that.</p>
                         </div>
                         
                     </div>
     
                     <div class="page page-portfolio dark">
-                            <h1>Portfolio</h1>
+                        <div class="page-inner">
+                            <h1>Projects</h1>
+                        </div>
+                            
                     </div>
     
                     <div class="page page-contact light">
+                        <div class="page-inner">
                             <h1>Contact</h1>
+                        </div>
+                            
                     </div>
         
             </div>
