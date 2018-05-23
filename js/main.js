@@ -2,6 +2,9 @@ let isMenuOpen = false;
 let currentPage = 1;
 
 window.onload=function(){
+
+    
+
     (function(d){
      var
      ce=function(e,n){var a=document.createEvent("CustomEvent");a.initCustomEvent(n,true,true,e.target);e.target.dispatchEvent(a);a=null;return false},
@@ -15,11 +18,11 @@ window.onload=function(){
      for(var a in touch){d.addEventListener(a,touch[a],false);}
     })(document);
 
-    var nextPage = () => {
+    var nextPage = function() {
         switchPage(-1);
     }
 
-    var prevPage = () => {
+    var prevPage = function() {
         switchPage(1);
     }
     
@@ -37,7 +40,19 @@ window.onload=function(){
         pages[i].addEventListener('swr', nextPage, false);
     }
 
-   
+    setUrlByName(location.hash);
+    let wrapper = document.getElementById('slide');
+    let progressIndicator = document.getElementById('progressIndicator');
+
+    // If a specific page is being navigated to as a first request, this
+    // makes it so the animation doesn't play out when the page loads
+    this.setTimeout(
+        function() {
+            wrapper.classList.add('slide-animation');
+            progressIndicator.classList.add('slide-animation');
+        }, 1
+    );
+    
 }
 
 function switchPage(increment) {
@@ -61,10 +76,15 @@ function switchPage(increment) {
         oldLinkElement[0].classList.remove('current-link');
         newLinkElement[0].classList.add('current-link');
 
+        setUrlByNumber(currentPage);
+
     } else if (newPage < 5 && newPage > 0) {
         const leftValue = '-' + (newPage -1) + '00%';
         wrapper.style.left = leftValue;
         currentPage = newPage;
+
+        setUrlByNumber(currentPage);
+
         progressIndicator.style.marginLeft = newProgressPosition + '%';
         oldLinkElement[0].classList.remove('current-link');
         newLinkElement[0].classList.add('current-link');
@@ -73,6 +93,40 @@ function switchPage(increment) {
 
     
     
+}
+
+function setUrlByNumber(pageNumber) {
+    
+    switch (pageNumber) {
+        case 2: 
+            location.hash = 'about';
+            break;
+        case 3: 
+            location.hash = 'projects';
+            break;
+        case 4: 
+            location.hash = 'contact';
+            break;
+        default:
+            location.hash = '';
+    }
+}
+
+function setUrlByName(pageName) {
+    console.log(pageName);
+    switch (pageName) {
+        case '#about': 
+            goToPage(2);
+            break;
+        case '#projects': 
+            goToPage(3);
+            break;
+        case '#contact': 
+            goToPage(4);
+            break;
+        default:
+            goToPage(1);
+    }
 }
 
 function goToPage(page) {
@@ -98,7 +152,22 @@ function closeMenu() {
         nav.classList.remove('menu-open');
     }
 }
+
+// document.getElementsByClassName('openCaseStudyButton')
+//     .addEventListener('click', function(e) {
+//         e = e || window.event;
+//         console.log(e);
+//     }, false);
     
+function openCaseStudy(projectName) {
+    let projectOverlay = document.getElementById(projectName);
+    projectOverlay.classList.remove('overlay-hidden');
+}
+
+function closeCaseStudy(projectName) {
+    let projectOverlay = document.getElementById(projectName);
+    projectOverlay.classList.add('overlay-hidden');
+}
 
 
 
