@@ -738,8 +738,8 @@ header .wrapper {
 
 .nav-wrapper {
   position: fixed;
-  top: calc(-100%);
-  right: 0;
+  right: -230px;
+  top: 60px;
   width: auto;
   height: calc(100% - 60px);
   width: 230px;
@@ -748,11 +748,11 @@ header .wrapper {
   flex-direction: column;
   z-index: 2;
   display: flex;
-  transition: top 0.3s ease-in-out;
+  transition: right 0.3s ease-in-out;
 }
 
 .nav-wrapper.menu-open {
-  top: 60px;
+  right: 0;
 }
 
 @media (min-width: 621px) {
@@ -879,19 +879,37 @@ header .wrapper {
   background-size: 100%;
 }
 
+.hello {
+  text-transform: none;
+  color: #ff6b6b;
+  font-size: 3rem;
+  margin-top: 35px;
+}
+
+.hello:after {
+  height: 0;
+  width: 0;
+}
+
 .intro-main {
   font-size: 1.4rem;
   font-family: "Work Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  color: #ff8e6b;
-  margin-bottom: 50px;
+  color: #ff6b6b;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 769px) {
+  .intro-main {
+    padding: 45px 60px;
+  }
 }
 
 .intro-light {
-  color: #ED9174;
+  color: #ff6b6b;
 }
 
 .intro-lighter {
-  color: #DB927B;
+  color: #F07F7F;
 }
 
 .intro-lightest {
@@ -899,7 +917,7 @@ header .wrapper {
 }
 
 .touchHelper {
-  color: #A18881;
+  color: #EDA6A6;
   font-size: 0.9rem;
 }
 
@@ -1067,6 +1085,18 @@ header .wrapper {
   margin-top: 25px;
 }
 
+@media (min-width: 769px) {
+  .project-overlay-image {
+    height: auto;
+  }
+}
+
+@media (min-width: 1201px) {
+  .project-overlay-image {
+    height: auto;
+  }
+}
+
 .project-overlay-image > img {
   height: 100%;
   margin: 0 auto;
@@ -1099,14 +1129,21 @@ footer {
   color: #FCEBE6;
 }
 
+.light h1 {
+  color: #FCEBE6;
+}
+
 .dark {
   color: #A18881;
+}
+
+.dark h1 {
+  color: #ff6b6b;
 }
 
 h1 {
   font-size: 2rem;
   margin-top: 15px;
-  text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 0;
 }
@@ -1126,7 +1163,6 @@ h1:after {
 h2 {
   font-weight: 600;
   font-size: 1.4rem;
-  text-transform: uppercase;
   margin-bottom: 0;
   margin-top: 25px;
 }

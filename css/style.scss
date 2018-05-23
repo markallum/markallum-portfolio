@@ -351,8 +351,8 @@ header {
 
 .nav-wrapper {
     position:fixed;
-    top:calc(-100%);
-    right:0;
+    right:-230px;
+    top:60px;
     width:auto;
     height:calc(100% - 60px);
     width:230px;
@@ -361,11 +361,11 @@ header {
     flex-direction:column;
     z-index:2;
     display:flex;
-    transition:top 0.3s ease-in-out;
+    transition:right 0.3s ease-in-out;
 
 
     &.menu-open {
-        top:60px;
+        right:0;
     }
 
     @include media(">nav-switch") {
@@ -496,19 +496,35 @@ header {
 // ============================== INTRODUCTION ============================== //
 
 
+.hello {
+    text-transform:none;
+    color:$pink;
+    font-size:3rem;
+    margin-top:35px;
+    &:after { 
+        height:0;
+        width:0;
+    }
+}
+
 .intro-main {
     font-size:1.4rem;
     font-family:$font-sans;
-    color:$peach;
-    margin-bottom:50px;
+    color:$pink;
+    margin-bottom:30px;
+    
+
+    @include media(">tablet") {
+        padding:45px 60px;
+    }
 }
 
 .intro-light {
-    color:#ED9174;
+    color:$pink;
 }
 
 .intro-lighter {
-    color:#DB927B;
+    color:#F07F7F;
 }
 
 .intro-lightest {
@@ -516,7 +532,7 @@ header {
 }
 
 .touchHelper {
-    color:#A18881;
+    color:#EDA6A6;
     font-size:0.9rem;
 
 }
@@ -711,7 +727,11 @@ header {
     margin-top:25px;
 
     @include media(">tablet") {
+        height:auto;
+    }
 
+    @include media(">desktop") {
+        height:auto;
     }
 
     >img {
@@ -749,16 +769,25 @@ footer {
 
 .light {
     color:$light-peach;
+
+    h1 {
+        color:$light-peach;
+    }
 }
 
 .dark {
    color:$dark-peach; 
+
+    h1 {
+        color:$pink;
+    }
+
 }
 
 h1 {
     font-size:2rem;
     margin-top:15px;
-    text-transform:uppercase;
+    //text-transform:uppercase;
     font-weight:600;
     margin-bottom:0;
 
@@ -766,6 +795,7 @@ h1 {
         width:200px;
     }
 }
+
 
 h1:after {
     content:'';
@@ -779,7 +809,7 @@ h1:after {
 h2 {
     font-weight:600;
     font-size:1.4rem;
-    text-transform:uppercase;
+    //text-transform:uppercase;
     margin-bottom:0;
     margin-top:25px;
 
