@@ -4,6 +4,7 @@ $font-serif:'Source Serif Pro', 'Times New Roman', serif;
 @import 'normalize';
 @import 'include-media';
 
+
 $dark:#262730;
 $blue:#20293B;
 $light:#F2F2F2;
@@ -19,8 +20,11 @@ $dark-peach:#A18881;
 $peach:#ff8e6b;
 $light-peach:#FCEBE6;
 
+
+
 $breakpoints: (phone: 420px, nav-switch: 620px, tablet: 768px, desktop: 1200px);
 
+@import 'menu';
 // ============================== CORE ============================== //
 
 body {
@@ -515,7 +519,7 @@ header {
     
 
     @include media(">tablet") {
-        padding:45px 60px;
+        margin-top:45px;
     }
 }
 
@@ -534,7 +538,7 @@ header {
 .touchHelper {
     color:#EDA6A6;
     font-size:0.9rem;
-
+    margin-top:45px;
 }
 
 

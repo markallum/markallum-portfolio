@@ -138,10 +138,13 @@ function goToPage(page) {
 
     function toggleMenu() {
         let nav = document.getElementById('nav');
+        let button = document.getElementById('menuButton');
         if (isMenuOpen) {
             nav.classList.remove('menu-open');
+            button.classList.remove('is-active');
         } else {
             nav.classList.add('menu-open');
+            button.classList.add('is-active');
         }
         isMenuOpen = !isMenuOpen;
     }
