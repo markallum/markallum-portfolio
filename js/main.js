@@ -137,22 +137,29 @@ function goToPage(page) {
 
 
     function toggleMenu() {
+        
         let nav = document.getElementById('nav');
         let button = document.getElementById('menuButton');
         if (isMenuOpen) {
             nav.classList.remove('menu-open');
             button.classList.remove('is-active');
+            console.log('open');
         } else {
             nav.classList.add('menu-open');
             button.classList.add('is-active');
+            console.log('close');
         }
+        
         isMenuOpen = !isMenuOpen;
     }
 
 function closeMenu() {
     let nav = document.getElementById('nav');
+    let button = document.getElementById('menuButton');
     if (isMenuOpen) {
         nav.classList.remove('menu-open');
+        button.classList.remove('is-active');
+        isMenuOpen = !isMenuOpen;
     }
 }
 

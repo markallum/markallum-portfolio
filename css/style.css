@@ -448,6 +448,10 @@ template {
   height: 50px;
 }
 
+.hamburger:focus {
+  outline: 0;
+}
+
 @media (min-width: 621px) {
   .hamburger {
     display: none;
@@ -1114,6 +1118,7 @@ header .wrapper {
   padding: 10px;
   transition: opacity 0.3s ease-in-out;
   opacity: 1;
+  pointer-events: auto;
 }
 
 @media (min-width: 769px) {
@@ -1124,7 +1129,8 @@ header .wrapper {
 
 .overlay-hidden {
   opacity: 0;
-  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .project-overlay-wrapper {
@@ -1272,6 +1278,21 @@ p {
 
 .main-paragraph {
   font-size: 1rem;
+}
+
+.main-link {
+  color: #ff8e6b;
+  font-size: 1.3rem;
+  padding: 5px 8px;
+  background: #FCEBE6;
+  border-bottom: 5px solid #ff8e6b;
+  display: inline-block;
+  margin-top: 20px;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.main-link:hover {
+  border-bottom: 5px solid #ff6b6b;
 }
 
 a {

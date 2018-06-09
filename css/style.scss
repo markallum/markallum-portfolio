@@ -656,6 +656,7 @@ header {
     padding:10px;
     transition:opacity 0.3s ease-in-out;
     opacity:1;
+    pointer-events:auto;
 
     @include media(">tablet") {
         padding:25px;
@@ -666,7 +667,8 @@ header {
 
 .overlay-hidden {
     opacity:0;
-    z-index:-1;
+    pointer-events:none;
+    transition:opacity 0.3s ease-in-out;
 }
 
 
@@ -827,6 +829,22 @@ p {
 
 .main-paragraph {
     font-size:1rem;
+}
+
+
+.main-link {
+    color:$peach;
+    font-size:1.3rem;
+    padding:5px 8px;
+    background:$light-peach;
+    border-bottom:5px solid $peach;
+    display:inline-block;
+    margin-top:20px;
+    transition:color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+    &:hover {
+      border-bottom:5px solid $pink;
+    }
 }
 
 
