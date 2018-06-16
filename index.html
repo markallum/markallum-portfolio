@@ -164,7 +164,7 @@
                                 </div>
                                 <div class="project-image-mobile">
 
-                                    <img class="img" src="img/infobase-log.png">
+                                    <img class="img" src="img/infobase-graphs.png">
                                 </div>
 
                                 <p>A modular intranet system for managing everything from meeting room bookings to production
@@ -198,12 +198,11 @@
                                                 greater as time went on. Initially capable of simple office manangement tasks
                                                 such as booking meeting rooms and holidays, it eventually spread its roots
                                                 into analysing production data, managing IT developments and even mapping
-                                                out affected areas of avian disease outbreaks on a map of the UK.
+                                                out affected areas of avian disease outbreaks on a map of the UK.</p>
 
+                                            <p>Infobase was used across the company, which meant that the user system needed to be flexible. Departments should only have access to certain modules, and each user would have certain capabilities within those modules.</p>
 
-                                                <h3>Modularity</h3>
-                                                <p>This potential was made clear to me from the start, so the system had to
-                                                    be designed with its future expectations in mind. This meant making the user and security systems flexible. One module could have different levels of permissions to another, yet all those permissions needed to be managed easily from one space. Each user would have a list of modules they had access to, and then varying levels of capabilities within that access. All of this could be managed from an admin panel.</p>
+                             
 
 
 
@@ -218,7 +217,7 @@
 
                             <div class="project-image">
 
-                                <img class="img" src="img/infobase-log.png">
+                                <img class="img" src="img/infobase-graphs.png">
                             </div>
 
 
@@ -239,7 +238,37 @@
                                 <p>A web portal for egg producers to manage the lifecycle and performance of their flocks.</p>
 
                                 <div class="project-options">
-                                    <a onclick="openCaseStudy(this)"  class="button-light">View Case Study</a>
+                                    <a data-project-name="Fms" onclick="openCaseStudy('caseFms')"  onclick="openCaseStudy(this)"  class="button-light">View Case Study</a>
+
+                                    <div id="caseFms" class="project-overlay-bg overlay-hidden">
+                                        <div class="wrapper project-overlay-close-wrapper">
+                                                <div onclick="closeCaseStudy('caseFms')"
+                                                class="project-overlay-close">
+                                                    X
+                                                </div>
+                                        </div>
+                                    <div class="project-overlay-wrapper wrapper">
+                                        
+                                        
+
+                                        <h2>Farm Management System</h2>
+                                        <div class="project-date">
+                                            Stonegate // 2014 - 2018
+                                        </div>
+                                        <div class="project-overlay-image">
+                                                <img class="img img-center" src="img/farm-management-dashboard.png">
+                                        </div>
+                                        
+
+                                        <p>The Farm Management System was a tool for Stonegates egg producers, allowing them to record, manage and analyse everything about their flocks life. Their production data was recorded every week, and returned to them in the form of helpful graphs and analytics. They were alerted to key events in their flocks life and how to handle them. Common proccesses between Stonegate and their producers could be automated. It also served as a central line of communication, so producers could be notified of news and events. </p>
+
+                                        <p>The main challenge in this project was keeping it suitable to its audience. Many of Stonegates producers were less computer literate than the average person, and so extra care had to be taken to make sure the system was constantly clear and intuitive.</p>
+
+                         
+
+
+
+                                    </div>
                                 </div>
 
 
@@ -247,28 +276,34 @@
 
                             </div>
 
-                            <div class="project-image">
-
-                                <img class="img img-center" src="img/farm-management-dashboard.png">
-                            </div>
+                            
 
 
 
+                        </div>
+
+                        <div class="project-image">
+
+                            <img class="img img-center" src="img/farm-management-dashboard.png">
                         </div>
                     </div>
 
                 </div>
 
             </div>
+        </div>
 
             <div class="page page-contact light">
                 <div class="page-inner wrapper">
                     <h1>Contact</h1>
                     <p class="main-paragraph">If you have an upcoming project I might be suited for, I'd love to hear from you.</p>
                     
-                    <a class="main-link" href="mailto:hello@markallum.co.uk">
-                        hello@markallum.co.uk
-                    </a>
+                    <p>Email:
+                        <a class="email-link" href="mailto:hello@markallum.co.uk">
+                            hello@markallum.co.uk
+                        </a>
+                    </p>
+                    
                     <form class="HIDE-ME">
                         <div class="col-wrapper">
                             <div class="col">
@@ -299,7 +334,7 @@
 
             </div>
 
-        </div>
+        
     </div>
 
 

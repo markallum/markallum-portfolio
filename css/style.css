@@ -1205,6 +1205,10 @@ header .wrapper {
   margin: 0 auto;
 }
 
+.project-overlay-image > img.img-center {
+  margin-left: 50%;
+}
+
 @media (min-width: 769px) {
   .project-overlay-image > img {
     height: auto;
@@ -1280,18 +1284,18 @@ p {
   font-size: 1rem;
 }
 
-.main-link {
-  color: #ff8e6b;
-  font-size: 1.3rem;
+.email-link {
+  color: #ff6b6b;
+  font-size: 1.2rem;
   padding: 5px 8px;
   background: #FCEBE6;
-  border-bottom: 5px solid #ff8e6b;
+  border-bottom: 5px solid #ff6b6b;
   display: inline-block;
-  margin-top: 20px;
-  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
 }
 
-.main-link:hover {
+.email-link:hover {
+  background: #FCFAFA;
   border-bottom: 5px solid #ff6b6b;
 }
 

@@ -744,6 +744,10 @@ header {
         height:100%;
         margin:0 auto;
 
+        &.img-center {
+            margin-left:50%;
+        }
+
         @include media(">tablet") {
             height:auto;
             width:100%;
@@ -831,19 +835,20 @@ p {
     font-size:1rem;
 }
 
-
-.main-link {
-    color:$peach;
-    font-size:1.3rem;
+.email-link {
+    color:$pink;
+    font-size:1.2rem;
     padding:5px 8px;
     background:$light-peach;
-    border-bottom:5px solid $peach;
+    border-bottom:5px solid $pink;
     display:inline-block;
-    margin-top:20px;
-    transition:color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition:background 0.3s ease-in-out;
+    
+
 
     &:hover {
-      border-bottom:5px solid $pink;
+        background:$white;
+        border-bottom:5px solid $pink;
     }
 }
 

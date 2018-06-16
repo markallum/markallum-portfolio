@@ -4,7 +4,7 @@ let currentPage = 1;
 window.onload=function(){
 
     
-
+    // Creates touch events to bind page change events to.
     (function(d){
      var
      ce=function(e,n){var a=document.createEvent("CustomEvent");a.initCustomEvent(n,true,true,e.target);e.target.dispatchEvent(a);a=null;return false},
@@ -25,21 +25,15 @@ window.onload=function(){
     var prevPage = function() {
         switchPage(1);
     }
-    
-
-    
 
     let pages = document.getElementsByClassName('page');
-    // let pages = document.getElementById('slide');
-    // pages.addEventListener('swl', prevPage, false);
-    // pages.addEventListener('swr', nextPage, false);
-    // console.log(pages);
 
     for(let i = 0; i < pages.length; i++) {
         pages[i].addEventListener('swl', prevPage, false);
         pages[i].addEventListener('swr', nextPage, false);
     }
 
+    
     setUrlByName(location.hash);
     let wrapper = document.getElementById('slide');
     let progressIndicator = document.getElementById('progressIndicator');
@@ -69,6 +63,7 @@ function switchPage(increment) {
     let newLinkElement = document.getElementsByClassName('navLink' + newPage);
 
         // refactor this, starting to get repeated code
+        // catches home page
     if (newPage === 1) {
         wrapper.style.left = '0';
         currentPage = 1;
@@ -78,6 +73,7 @@ function switchPage(increment) {
 
         setUrlByNumber(currentPage);
 
+    // catches all other pages
     } else if (newPage < 5 && newPage > 0) {
         const leftValue = '-' + (newPage -1) + '00%';
         wrapper.style.left = leftValue;
@@ -89,12 +85,14 @@ function switchPage(increment) {
         oldLinkElement[0].classList.remove('current-link');
         newLinkElement[0].classList.add('current-link');
     }
+    // all 
 
 
     
     
 }
 
+// changes url based on page that is being navigated to
 function setUrlByNumber(pageNumber) {
     
     switch (pageNumber) {
@@ -112,6 +110,7 @@ function setUrlByNumber(pageNumber) {
     }
 }
 
+// changes page based on url that has been navigated from
 function setUrlByName(pageName) {
     console.log(pageName);
     switch (pageName) {
@@ -162,12 +161,6 @@ function closeMenu() {
         isMenuOpen = !isMenuOpen;
     }
 }
-
-// document.getElementsByClassName('openCaseStudyButton')
-//     .addEventListener('click', function(e) {
-//         e = e || window.event;
-//         console.log(e);
-//     }, false);
     
 function openCaseStudy(projectName) {
     let projectOverlay = document.getElementById(projectName);
