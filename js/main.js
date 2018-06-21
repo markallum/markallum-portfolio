@@ -1,7 +1,13 @@
 let isMenuOpen = false;
 let currentPage = 1;
 
+window.addEventListener('popstate', function(){
+    setUrlByName(location.hash);
+});
+
 window.onload=function(){
+
+    
 
     
     // Creates touch events to bind page change events to.
@@ -32,6 +38,7 @@ window.onload=function(){
         pages[i].addEventListener('swl', prevPage, false);
         pages[i].addEventListener('swr', nextPage, false);
     }
+
 
     
     setUrlByName(location.hash);
@@ -112,7 +119,6 @@ function setUrlByNumber(pageNumber) {
 
 // changes page based on url that has been navigated from
 function setUrlByName(pageName) {
-    console.log(pageName);
     switch (pageName) {
         case '#about': 
             goToPage(2);
@@ -142,11 +148,9 @@ function goToPage(page) {
         if (isMenuOpen) {
             nav.classList.remove('menu-open');
             button.classList.remove('is-active');
-            console.log('open');
         } else {
             nav.classList.add('menu-open');
             button.classList.add('is-active');
-            console.log('close');
         }
         
         isMenuOpen = !isMenuOpen;
